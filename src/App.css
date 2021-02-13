@@ -1,0 +1,12 @@
+.app{
+    border-bottom: 30px;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 100% !important;
+   
+  background-color: #ef7215;
+}
+
+.ui container{
+    flex-grow: 1 !important;
+}

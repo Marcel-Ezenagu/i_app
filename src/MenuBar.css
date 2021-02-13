@@ -1,0 +1,14 @@
+.menuBar{
+    display: flex;
+    justify-content: space-between;
+    
+position: sticky!important;
+
+top: 0 !important;
+}
+
+.menuBar > img{
+    width: 100%;
+    max-width:5rem;
+    align-self: start;
+}

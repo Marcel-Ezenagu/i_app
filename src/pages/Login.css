@@ -1,0 +1,7 @@
+/* Login */
+.ui centered two column grid {
+  max-width: 80%vw !important;
+  width: 80%vw !important;
+  height: 100vh;
+    max-height: 100%;
+  }

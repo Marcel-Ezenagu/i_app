@@ -1,0 +1,92 @@
+*{
+  margin: auto;
+  color:  white !important ;
+  
+  background-color: #ef7215;
+   /*#f05e23
+  #f79862
+  #ef7215
+  #fd6a02
+  */
+}
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+   
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/*  Alerts */
+.success {
+  color: #20a020 !important;
+}
+
+.danger {
+  color: #a02020 !important;
+}
+
+.alert{
+  padding: 1rem !important;
+  border: 0.1rem solid transparent !important;
+  border-radius: 0.5rem !important;
+}
+
+.alert-info{
+  color:#2020a0 !important;
+  background-color: #e0e0ff !important;
+}
+
+.alert-danger{
+  color: #a02020 !important;
+  background-color: #ffe0e0e0 !important;
+}
+
+
+
+/* internships 
+.ui centered two column grid {
+  height: 100% ;
+}
+*/
+
+/* slider  */
+
+.d-block {
+  margin-top: 1rem;
+  width: 60% !important;
+}
+
+
+/* LandingPage */
+.landingPage{
+
+  position: relative;
+}
+.landing-image{
+  /* margin-left: 0;
+  margin-right: 0; */
+  width: 100% !important;
+  max-width: 100vw !important;
+  object-fit: cover;
+  filter: brightness(30%);
+}
+
+.cta{
+  position: absolute;
+  padding: 1.5rem;
+  margin-top: -12rem;
+}
+.cta button{
+  background-color: #ef7215;
+}

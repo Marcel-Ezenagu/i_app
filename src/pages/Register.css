@@ -1,0 +1,31 @@
+
+.register:active{
+    color: black !important;
+    
+}
+
+.caution{
+    margin-bottom: 20px;
+    background-color: rgb(1, 1, 26) !important ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    justify-content: center ;
+    color: black !important;
+}
+.caution > strong{
+    padding-top: 20px;
+    border:10px !important;
+    margin: auto !important;
+    border-color:  rgb(1, 1, 26) !important;
+    
+
+}
+
+input, textarea, select{
+    color: black !important;
+}
+.ui form {
+    max-width: 80% !important;
+}

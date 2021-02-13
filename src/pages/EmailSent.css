@@ -1,0 +1,12 @@
+.emailSent {
+    margin-top: 20px;
+    height: 100vh;
+    align-items: center;
+    width: 100vw;
+}
+
+.emailSent > p{
+    font: 400 !important;
+    color:#2020a0 !important;
+    background-color: #e0e0ff !important;
+  }
