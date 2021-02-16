@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { Form, Segment, Grid, Button, Header } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { Form, Segment, Grid, Button, Header, Container } from 'semantic-ui-react';
 
 import { useDispatch } from 'react-redux';
 import { signup } from '../actions/userActions'
@@ -11,7 +11,7 @@ import MessageBox from '../MessageBox';
 import Axios from '../services/axios';
 import instance from '../services/axios';
 
-import './Register.css';
+
 import Note from '../components/Note';
 
 function Register(props) {
@@ -49,11 +49,86 @@ function Register(props) {
 
 
     return (
-        < div className='register'> 
-            <h1 style={{textAlign:'center'}}>Internapp Africa partner Onboarding</h1>
+        <div className='register'> 
+            <h4 style={{textAlign:'center'}}>Internapp Africa partner Onboarding</h4>
             <Note />
-            <br/>
-                <Grid centered  columns={2} >
+            <br />
+            <div>
+                <form>
+                <div className='form-field'>
+                    <label>First Name</label>
+                    <input name='First Name' type='text' placeholder='Enter your First Name' value={firstName}  onChange={e => setFirstName(e.target.value)}  required />
+
+                </div>
+            
+                <div className='form-field' >
+                    <label>last Name</label>
+                    <input name='last Name' type='text' placeholder='Enter your last Name' value={lastName}  onChange={e => setLastName(e.target.value)}  required />
+
+                    </div>
+                    
+                <div className='form-field'>
+                    <label>Email</label>
+                    <input name='email' type='email' placeholder='Enter your email' value={email}  onChange={e => setEmail(e.target.value)}  required />
+
+                </div>
+                    
+                    
+                <div className='form-field'>
+                    <label>Username</label>
+                    <input name='Username' type='text' placeholder='Enter your Username' value={userName}  onChange={e => setUserName(e.target.value)}  required />
+
+                    </div>
+                    
+                <div className='form-field'>
+                    <label>Phone</label>
+                    <input name='Phone' type='Phone' placeholder='Enter your Phone' value={phone}  onChange={e => setPhone(e.target.value)}  required />
+
+                </div>
+                    
+                    <div className='form-field' >
+                        <label>Gender</label>
+                        <select onSelect={(e)=> setGender(e.target.value)} className="ui fluid dropdown">
+                            
+                            <option value="MA">Male</option>
+                            <option value="FE">Female</option>
+                        </select>
+                    </div>
+
+                <div className='form-field'>
+                    <label>password</label>
+                    <input name='password' type='text' placeholder='Enter your password' value={password}  onChange={e => setPassword(e.target.value)}  required />
+
+                    </div>
+                    
+                <div className='form-field'>
+                    <label>Profile Image</label>
+                    <input name='Profile Image' type='file' placeholder='choose a Profile Image' value={profileImage}  onChange={e => setProfileImage(e.target.files[0])}  required />
+
+                    </div>
+                    
+                    <div className='form-field'>
+                    <label>Scope</label>
+                    <input name='Scope' type='Scope' placeholder='Enter your Scope' value={scope}  onChange={e => setScope(e.target.value)}  required />
+
+                </div>
+                
+                    
+                
+                <button
+                    type='submit'
+                    label='Send Message'
+                    
+                    className='signup-button'
+                    >Sign Up</button>              
+                    <div className='bottom-signup'>
+                        <br />
+                        <p style={{color: 'rgb(3, 105, 17)'}}>Already have an account?{' '}<Link to='/login'>Login</Link></p>
+                </div>
+
+                </form>
+            </div>
+                {/* <Grid centered  columns={2} >
                     <Grid.Column width={13}>
                        <Segment>       
             
@@ -160,11 +235,10 @@ function Register(props) {
                                 )}
                           </Segment>
                     </Grid.Column>
-                </Grid>
+                </Grid> */}
            
             
         </div>
-        
     )
     
 }

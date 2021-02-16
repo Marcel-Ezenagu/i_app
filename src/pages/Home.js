@@ -34,7 +34,9 @@ function Home() {
     */
   
   return (
+    <div>
     <div className="home">
+      
       <h2>We are a technology startup that connects young African talents to leading
       companies and organizations globally for career development.</h2>
       <br/>
@@ -150,6 +152,7 @@ function Home() {
 
                 </>)}
           */}
+        </div>
     </div>
   );
 }

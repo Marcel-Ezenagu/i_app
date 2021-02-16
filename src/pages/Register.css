@@ -1,4 +1,9 @@
-
+.register{
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 5rem;
+}
 .register:active{
     color: black !important;
     

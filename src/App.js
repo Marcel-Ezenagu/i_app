@@ -2,7 +2,9 @@ import React, {useEffect} from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Container } from "semantic-ui-react";
 
-import "semantic-ui-css/semantic.min.css";
+// import "semantic-ui-css/semantic.min.css";
+import './App.css';
+
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
@@ -16,6 +18,8 @@ import Footer from "./Footer";
 import { listCompanies } from "./actions/companyActions";
 import { useDispatch } from "react-redux";
 import LandingPage from "./pages/LandingPage";
+import Homepage from "./pages/Homepage";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -53,24 +57,21 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <div className="menubar">
           <MenuBar />
-        </div>
-       
           <Switch>
           
-            <Container>
+          
                 {/* <Route path='/emailsent' component={EmailSent} /> */}
-                <Route  path="/login" component={Login} />
+                 <Route  path="/login" component={Login} />
                 <Route  path="/signup" component={Register} />
                 <Route  path='/internships' component={Internship} />
                 <PrivateRoute   path="/dashboard" component={Dashboard} />
-                <Route  path='/home' component={Home} />
+                <Route  path='/home' component={Home} /> 
               
-            <Route exact path='/' component={LandingPage} />
+            <Route exact path='/' component={LandingPage} /> 
+              {/* <Homepage />   */}
               
-              
-            </Container>
+           
           </Switch>
             
             <Footer />
@@ -81,3 +82,4 @@ function App() {
 }
 
 export default App;
+  

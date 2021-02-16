@@ -7,9 +7,6 @@
     color: rgb(19, 8, 167) !important;
     display: inline;
 }
-.home * h2,h3{    
-    color:black !important;
-}
 
 p{
     font-size: 15px !important;
@@ -106,9 +103,6 @@ margin-left: -1em;
 
 }
 
-.home_img > h3{
-    color: rgb(1, 1, 43) !important;
-}
 
 .home_img >div{
     display: flex;
@@ -178,9 +172,6 @@ padding-top: 10px;
     margin-left: -1em;
 }
 
-h4{
-    color: black !important;
-}
 
 .each-fade {
     display: flex;

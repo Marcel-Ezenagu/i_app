@@ -5,8 +5,8 @@ import {
   Button,
   Form,
   Grid,
-  Header,
-  Message,
+    Header,
+  Container,
   Segment,
 } from 'semantic-ui-react';
 import { login} from '../actions/userActions';
@@ -54,61 +54,90 @@ function Login(props) {
        
               
 
-return (
-    
-     <div>
-         <Grid centered columns={2} >
-            <Grid.Column width={13}>
-                <Header as="h2" textAlign="center">Login</Header>
-               
-                {loading && <LoadingBox />}
+    return (
+        <div className='login'>
+           
+            
+            <div>
+                <h4 style={{textAlign:'center'}}>Login</h4>
+            </div>
+            <br />
+            {loading && <LoadingBox />}
                 {error && <MessageBox>{error}</MessageBox>}
               
-                <Segment >
+            <div>
+                <form onSubmit={loginHandler}>
+                <div className='form-field'>
+                    <label>Email</label>
+                    <input name='email' type='email' placeholder='Enter your email' value={email}  onChange={e => setEmail(e.target.value)}  required />
 
-                    <Form  onSubmit={loginHandler} centered >
-                        <Form.Input
-                            fluid
-                            icon="user"
-                            iconPosition="left"
-                            placeholder="Email address"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                        />
-                        <Form.Input
-                            fluid
-                            icon="lock"
-                            iconPosition="left"
-                            placeholder="Password"
-                            
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required
-                        />
+                </div>
 
-                        <Button color="black"   type='submit' fluid size="large" disabled={loading}>Login</Button>
+                <div className='form-field'>
+                    <label>Password</label>
+                    <input Password='password' type='text' placeholder='Enter your Password' value={password} onChange={e => setPassword(e.target.value)}  required />
+
+                    </div>
+                                   
+                 <button
+                    type='submit'
+                        label='Send Message'
+                        className='login-button'
+                    >Login</button> 
                     
-                    </Form>
-                    <br />
-                   <p>New to Internapp ? <Link to= '/signup'>Create an Account</Link></p> 
-                         </Segment>
+                    <div className='bottom' >
+                                <br/>
+                        <p>New to Internapp ? <Link to= '/signup' style={{color: "rgb(3, 105, 17)"}}>Create an Account</Link></p> 
+                   
+                    </div>
+
+                </form>
+            </div>
+         </div>
+    // <Container>
+    //     <Grid centered columns={2} >
+            
+    //         <Grid.Column width={13}>
+    //             <Header as="h2" textAlign="center">Login</Header>
+               
+    //             {loading && <LoadingBox />}
+    //             {error && <MessageBox>{error}</MessageBox>}
+              
+    //             <Segment >
+
+    //                 <Form  onSubmit={loginHandler} centered >
+    //                     <Form.Input
+    //                         fluid
+    //                         icon="user"
+    //                         iconPosition="left"
+    //                         placeholder="Email address"
+    //                         value={email}
+    //                         onChange={(e) => setEmail(e.target.value)}
+    //                         required
+    //                     />
+    //                     <Form.Input
+    //                         fluid
+    //                         icon="lock"
+    //                         iconPosition="left"
+    //                         placeholder="Password"
+                            
+    //                         value={password}
+    //                         onChange={(e) => setPassword(e.target.value)}
+    //                         required
+    //                     />
+
+    //                     <Button color="black"   type='submit' fluid size="large" disabled={loading}>Login</Button>
+                    
+    //                 </Form>
+    //                 <br />
+    //                <p>New to Internapp ? <Link to= '/signup'>Create an Account</Link></p> 
+    //                      </Segment>
                    
                     
-            </Grid.Column>
+    //         </Grid.Column>
                 
-        </Grid>
-        <hr />
-        <br/>
-        <div width={13}>
-             <h3>How to reach us:</h3>
-            <p>
-            Mobile {' '} +234 810 776 6889<br/>
-            Email - <Link>info@internapp.co</Link>
-            </p>
-
-        </div>
-    </div>
+    //     </Grid>
+    //  </Container>
     );
 
 }

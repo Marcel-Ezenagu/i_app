@@ -1,18 +1,17 @@
+
 .note{
-    margin-bottom: 20px;
-    background-color: rgb(1, 1, 26) !important ;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: fit-content;
-    justify-content: center ;
-    color: black ;
-    border: 3px solid white;
+    background:   rgb(1, 1, 26) ;
+    margin: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
-.note > strong{
-    padding-top: 20px;
-    border:10px !important;
-    margin: auto !important;
-    border-color:  rgb(1, 1, 26) !important;
-   
+
+.note h6{
+    
+    color: red !important;
+}
+
+.note h6 strong{
+    
+    color: red !important;
 }

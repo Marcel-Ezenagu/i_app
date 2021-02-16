@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { Container, Image, Menu } from 'semantic-ui-react';
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import {  Image, Menu } from "semantic-ui-react";
 
-import { useDispatch, useSelector } from 'react-redux';
-import { logout } from './actions/userActions';
+import "bootstrap/dist/css/bootstrap.min.css";
 
-import './MenuBar.css';
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "./actions/userActions";
+
+import { Navbar, Nav }  from 'react-bootstrap'
 
 function MenuBar(props) {
-  const [activeItem, setActiveItem] = useState('');
+  const [activeItem, setActiveItem] = useState("");
+
+  const mystyle = {width: "100%", marginRight: "1rem"}
 
   const dispatch = useDispatch();
   
@@ -27,62 +31,79 @@ function MenuBar(props) {
   
 
   return (
-      <Menu secondary pointing>
-        <Menu.Item>
-          <Image
-            size="tiny"
-            src="/images/ia.jpg"
-            alt="Logo"
-            as={Link}
-            to="/"
-            rounded
-          />
-        </Menu.Item>
+      // <Menu secondary pointing >
+      //   <Menu.Item>
+      //     <Image
+      //       size="tiny"
+      //       src="/images/ia.jpg"
+      //       alt="Logo"
+      //       as={Link}
+      //       to="/"
+      //       rounded
+      //     />
+      //   </Menu.Item>
 
-        <Menu.Menu position="right">
-          {!userInfo? (
-            <>
+      //   <Menu.Menu position="right">
+      //     {!userInfo? (
+      //       <>
               
-              <Menu.Item
-                name="internships"
-                active={activeItem === "internships"}
-                as={Link}
-                to="/internships"
-              />
+      //         <Menu.Item
+      //           name="internships"
+      //           active={activeItem === "internships"}
+      //           as={Link}
+      //           to="/internships"
+      //         />
 
               
-              <Menu.Item
-                name="login"
-                active={activeItem === "login"}
-                as={Link}
-                to="/login"
-                color="blue"
-              />
+      //         <Menu.Item
+      //           name="login"
+      //           active={activeItem === "login"}
+      //           as={Link}
+      //           to="/login"
+      //           color="blue"
+      //         />
 
-            </>
-          ) : (
-              <>
+      //       </>
+      //     ) : (
+      //         <>
                 
-              <Menu.Item
-                name="internships"
-                active={activeItem === "internships"}
-                as={Link}
-                to="/internships"
-              />
-              <Menu.Item name="dashboard" as={Link} to="/dashboard" />
+      //         <Menu.Item
+      //           name="internships"
+      //           active={activeItem === "internships"}
+      //           as={Link}
+      //           to="/internships"
+      //         />
+      //         <Menu.Item name="dashboard" as={Link} to="/dashboard" />
                 
-              <Menu.Item
-                name="logout"
-                active={activeItem === "logout"}
-                  as='button'
-                  onClick={logoutHandler}
+      //         <Menu.Item
+      //           name="logout"
+      //           active={activeItem === "logout"}
+      //             as='button'
+      //             onClick={logoutHandler}
                 
-              />
-            </>
-          )}
-        </Menu.Menu>
-      </Menu>
-  );
+      //         />
+      //       </>
+      //     )}
+      //   </Menu.Menu>
+      // </Menu>
+
+      <Navbar fixed="top" collapseOnSelect expand="md" bg="dark" variant="light" >
+      <Navbar.Brand href="/"><img className='logo' src='/images/logo-dark.jpg' alt="INTERNAPP-AFRICA" /></Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse  >
+        
+      <Nav className="justify-content-end" style={mystyle}>
+          <Nav.Link href="#about">About Us</Nav.Link>
+          <Nav.Link href="/internships">Internships</Nav.Link>
+          <Nav.Link href="#services">Our Services</Nav.Link>
+              
+          <Nav.Link href="/login">Login</Nav.Link>
+        </Nav>
+        
+      </Navbar.Collapse>
+
+  </Navbar>
+  )
 }
 
 export default MenuBar

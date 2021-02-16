@@ -13,13 +13,12 @@ export default function Internship() {
 /* 
     const [ploading, setPLoading] = useState(false);
     const [perror, setPerror] = useState(false); */
-    const companyList = useSelector(state => state.companyList);
+    const companyList = useSelector((state) => state.companyList);
     const { loading, error, companies } = companyList;
 
-/* 
-    useEffect(() => {
-        dispatch(listCompanies());
-    }, [dispatch]); */
+    // useEffect(() => {
+    //     dispatch(listCompanies());
+    // }, [dispatch, listCompanies]); 
     
     return (
 
@@ -33,8 +32,8 @@ export default function Internship() {
                              <Company key={company.id}
                                 id= {company.id}
                                 title= {company.titleOfIntern}
-                                    price={company.stipend}
-                                    company={company.name}
+                                price={company.stipend}
+                                company={company.name}
                                 location={company.location}
                     
                              />

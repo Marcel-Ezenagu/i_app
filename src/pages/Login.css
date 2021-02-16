@@ -1,7 +1,14 @@
 /* Login */
+
+.ui container{
+  position: absolute;
+  margin-top: 15rem ;
+}
+
 .ui centered two column grid {
   max-width: 80%vw !important;
   width: 80%vw !important;
   height: 100vh;
     max-height: 100%;
+    margin-top: 15rem 
   }
