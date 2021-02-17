@@ -25,11 +25,16 @@ export default function Footer() {
                         
                         <a>info@internapp.co</a>
                     </div>
+                    <div className="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
+                        <i className="fas fa-envelope fa-3x mb-3 text-muted"></i>
+                        
+                        <a>Suite 202, Enaan tower, East-West Road, Choba, Portharcourt</a>
+                    </div>    
                 </div>
             </div>
         </section>
-         <footer className="bg-dark py-5">
-            <div className="container"><div className="small text-center text-muted">All rights reserved © 2020 - Internapp Africa</div></div>
+            <footer className="bg-dark py-5">
+                 <div className="container"><div className="small text-center text-muted">All rights reserved © 2020 - Internapp Africa</div></div>
             </footer>
             </>
     )

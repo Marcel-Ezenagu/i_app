@@ -103,7 +103,7 @@ function Register(props) {
                     
                 <div className='form-field'>
                     <label>Profile Image</label>
-                    <input name='Profile Image' type='file' placeholder='choose a Profile Image' value={profileImage}  onChange={e => setProfileImage(e.target.files[0])}  required />
+                    <input name='Profile Image' type='file' placeholder='choose a Profile Image' value={profileImage}  onChange={e => setProfileImage(e.target.files[0])}  />
 
                     </div>
                     

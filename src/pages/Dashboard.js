@@ -72,13 +72,7 @@ const {loading, error, companyInfo } = company
 
     return (
       <>
-        <Header as="h1" textAlign="center">
-          {" "}
-          Dashboard{" "}
-        </Header>
         <div>
-          <Grid centered column={2}>
-            <Grid.Column>
 {/*               <Segment>
                 <Form onSubmit={updateUser}>
                   <Header as="h4" textAlign="left">
@@ -147,73 +141,47 @@ const {loading, error, companyInfo } = company
               </Segment>
  */}
               
-              
-              <Note/>
-              <Segment>
-                
-              <Form centered onSubmit={companyCreateHandler} size="large">
-                
-
-                  <Header as="h3" textAlign="left">
-                    {" "}
-                    Company Profile{" "}
-                  </Header>
+              <form>
                      
                 {loading && <LoadingBox />}
                 {error && <MessageBox>{error}</MessageBox>}
               
-                  <Form.Field
-                    id="form-input-control-facebook"
-                    control={Input}
-                    label="Facebook Profile URL"
-                    placeholder="Please enter a your Facebook Profile URL"
-                    
-                    value={facebook}
-                    onChange={(e) => setFacebook(e.target.value)}
-                  />
-
-                  <Form.Field
-                    id="form-input-control-twitter"
-                    control={Input}
-                    label="Twitter Profile URL"
-                    placeholder="Please enter a your twitter Profile URL"
+                <div className='form-field'>
+                    <label>Facebook Profile URL</label>
+                    <input name='facebook' type='url' placeholder='Enter your facebook profile URL' value={facebook}  onChange={e => setFacebook(e.target.value)}  required />
+                </div>
                   
-                    value={twitter}
-                    onChange={(e) => setTwitter(e.target.value)}
-                  />
+                <div className='form-field'>
+                    <label>Twitter Profile URL</label>
+                    <input name='twitter' type='url' placeholder='Enter your twitter profile URL' value={twitter}  onChange={e => setTwitter(e.target.value)}  required />
+                </div>
 
-                  <Form.Field
-                    id="form-input-control-linkedIn"
-                    control={Input}
-                    label="LinkedIn Profile URL"
-                    placeholder="Please enter a your linkedIn Profile URL"
-                    
-                    value={linkedIn}
-                    onChange={(e) => setLinkedIn(e.target.value)}
-                  />
-
-                  <Form.Input
-                    label="Name"
-                    placeholder="Enter your Company's Name"
-                    name="Name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                  />
-
-                  <Form.Input
-                    label="Industry"
-                    placeholder="Enter your industry of operation"
-                    name="industry"
-                    value={industry}
-                    onChange={(e) => setIndustry(e.target.value)}
-                    required
-                  />
+                <div className='form-field'>
+                    <label>LinkedIn Profile URL</label>
+                    <input name='linkedIn' type='url' placeholder='Enter your linkedIn profile URL' value={linkedIn}  onChange={e => setLinkedIn(e.target.value)}  required />
+                </div>
 
                   
-                  <div className="field">
+                <div className='form-field'>
+                    <label>Company Name</label>
+                    <input name='companyData' type='text' placeholder="Enter your Company's name" value={companyData}  onChange={e => setCompanyData(e.target.value)}  required />
+                </div>
+
+    
+                <div className='form-field'>
+                    <label>Industry</label>
+                    <input name='industry'
+                      type='text'
+                      placeholder="Enter your industry of operation"
+                      value={setIndustry}
+                      onChange={e => setIndustry(e.target.value)}
+                      required />
+                </div>
+                  
+                  <div className="form-field">
                     <label>Company Description</label>
                     <textarea
+                      placeholder="Enter a brief description of your company"
                       value={companyData}
                       onChange={(e) => setCompanyData(e.target.value)}
                       required
@@ -221,35 +189,41 @@ const {loading, error, companyInfo } = company
                   </div>
 
                   
-                  <Form.Input
-                    label="Location"
-                    placeholder="Enter your company's location"
-                    name="Location"
-                    value={location}
-                    onChange={(e) => setLocation(e.target.value)}
-                    required
-                  />
+                  
+                  <div className='form-field'>
+                    <label>Location</label>
+                    <input name='location'
+                      type='text'
+                      placeholder="Enter your location of operation"
+                      value={Location}
+                      onChange={e => setLocation(e.target.value)}
+                      required />
+                </div>
 
-                  <Form.Input
-                    label="Title for Intern"
-                    placeholder="Enter the Title for the position"
-                    name="Title"
-                    value={titleOfIntern}
-                    onChange={(e) => setTitleOfIntern(e.target.value)}
-                    required
-                  />
+                  
+                  <div className='form-field'>
+                    <label>Title for Intern</label>
+                    <input name='Title for Intern'
+                      type='text'
+                      placeholder="Enter your Title for the position"
+                      value={titleOfIntern}
+                      onChange={e => setTitleOfIntern(e.target.value)}
+                      required />
+                  </div>
 
 
-                  <Form.Input
-                    label="Field of Study"
-                    placeholder="Enter the field of study."
-                    name="field"
-                    value={fieldOfStudy}
-                    onChange={(e) => setFieldOfStudy(e.target.value)}
-                    required
-                  />
 
-                  <div className="field">
+                  <div className='form-field'>
+                    <label>Field of Study</label>
+                    <input name='field'
+                      type='text'
+                      placeholder="Enter required field of study"
+                      value={fieldOfStudy}
+                      onChange={e => setFieldOfStudy(e.target.value)}
+                      required />
+                </div>
+
+                  <div className="form-field">
                     <label>Responsibilities</label>
                     <textarea
                       value={responsibilities}
@@ -258,25 +232,30 @@ const {loading, error, companyInfo } = company
                     ></textarea>
                   </div>
 
-                  <Form.Input
-                    label="Terms of Engagement"
-                    placeholder="E.g:  3 - 12 months"
-                    name="Terms"
-                    value={termsOfEngagement}
-                    onChange={(e) => setTermsOfEngagement(e.target.value)}
-                    required
-                  />
+                  
+                  <div className='form-field'>
+                    <label>Terms of Engagement</label>
+                    <input name='termsOfEngagement'
+                      type='text'
+                      placeholder="E.g:  3 - 12 months"
+                      value={termsOfEngagement}
+                      onChange={e => setTermsOfEngagement(e.target.value)}
+                      required />
+                </div>
 
-                  <Form.Input
-                    label="Stipend (In USD)"
-                    placeholder="Enter the Stipend (In USD)"
-                    name="stipend"
-                    value={stipend}
-                    onChange={(e) => setStipend(e.target.value)}
-                    required
-                  />
+                  <div className='form-field'>
+                    <label>Stipend (In USD)</label>
+                    <input name='stipend'
+                      type='number'
+                      placeholder="Enter the Stipend (In USD)"
+                      value={stipend}
+                      onChange={e => setStipend(e.target.value)}
+                      required />
+                  </div>
 
-                  <div className="field">
+                  
+
+                  <div className="form-field">
                     <label>Participatory Mode</label>
                     <select
                       className="ui fluid dropdown"
@@ -289,18 +268,16 @@ const {loading, error, companyInfo } = company
                     </select>
                   </div>
 
-                  <Form.Field
-                    id="form-button-control-public"
-                    control={Button}
-                    content="Post Position"
-                    color="black"
-                    centered
-                    disabled={loading}
-                  />
-                </Form>
-              </Segment>
-            </Grid.Column>
-          </Grid>
+                  
+                <button
+                    type='submit'
+                    label='Send Message'
+                    
+                    className='signup-button'
+                    >Post</button>              
+                    
+              </form>
+                
         </div>
       </>
     );

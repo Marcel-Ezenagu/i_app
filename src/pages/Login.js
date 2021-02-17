@@ -44,13 +44,7 @@ function Login(props) {
  
         }
 
-    useEffect(() => {
-        if (userInfo) {
-            //console.log(userInfo.user.firstName);
-        props.history.push('/dashboard');     
-            } 
-        }, [userInfo])
-    
+   
        
               
 
@@ -75,14 +69,15 @@ function Login(props) {
 
                 <div className='form-field'>
                     <label>Password</label>
-                    <input Password='password' type='text' placeholder='Enter your Password' value={password} onChange={e => setPassword(e.target.value)}  required />
+                    <input password='password' type='text' placeholder='Enter your Password' value={password} onChange={e => setPassword(e.target.value)}  required />
 
                     </div>
                                    
                  <button
                     type='submit'
-                        label='Send Message'
-                        className='login-button'
+                    label='Send Message'
+                    className='login-button'
+                    disabled={loading}
                     >Login</button> 
                     
                     <div className='bottom' >

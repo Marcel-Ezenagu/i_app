@@ -19,7 +19,7 @@ export default function LandingPage() {
             </div>
      </div>
 
-        <section className="page-section bg-primary" id="about">
+         <section className="page-section bg-primary" id="about">
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-lg-8 text-center">
@@ -28,14 +28,12 @@ export default function LandingPage() {
                         <p className="text-white-50 mb-4">A technology startup that connects young African talents to career opportunities by connecting Leading companies and organizations across all sectors who:{''}</p>
                         <ul className='bullets'>
                             <span>
-                                    {/* <i class="fas fa-globe"></i> */}
-                                    
+                                   
                                     <LanguageSharpIcon fontSize="large" style={{ fill: "rgb(2, 2, 44)" }} />
-                                <li>Want young African talents in their organizations on paid internships in any part of the world.</li>
+                                 <li>Want young African talents in their organizations on paid internships in any part of the world.</li>
                             </span> 
                                 
                             <span>
-                                    {/* <i class="fas fa-hand-holding-usd"></i> */}
                                     <MonetizationOnSharpIcon fontSize="large" style={{ fill: "rgb(2, 2, 44)" }} />
                                 <li>Can pay their undergraduate interns $100 or more and $300 or more for their postgraduate interns (young professionals) as and when due.</li>
                             </span>
@@ -45,7 +43,9 @@ export default function LandingPage() {
             </div>
         </div>
             </section>
-            
+              
+              
+                
             <section class="page-section" id="services">
             <div class="container">
                 <h2 class="text-center mt-0">Our Services</h2>

@@ -93,12 +93,28 @@ function MenuBar(props) {
       <Navbar.Collapse  >
         
       <Nav className="justify-content-end" style={mystyle}>
-          <Nav.Link href="#about">About Us</Nav.Link>
-          <Nav.Link href="/internships">Internships</Nav.Link>
-          <Nav.Link href="#services">Our Services</Nav.Link>
-              
-          <Nav.Link href="/login">Login</Nav.Link>
-        </Nav>
+          {userInfo ? (
+            <>
+              <Nav.Link href="/internships">Internships</Nav.Link>
+                  
+              <Nav.Link href="/dashboard">Dashboard</Nav.Link>
+              <Nav.Link href="/" onClick={logoutHandler}>Logout</Nav.Link>
+            </>
+          )
+            :
+          (
+          <>
+            
+            <Nav.Link href="#about">About Us</Nav.Link>
+            <Nav.Link href="/internships">Internships</Nav.Link>
+            <Nav.Link href="#services">Our Services</Nav.Link>
+                
+            <Nav.Link href="/login">Login</Nav.Link>
+          </>
+          )
+          
+        }
+      </Nav>
         
       </Navbar.Collapse>
 
