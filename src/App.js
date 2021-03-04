@@ -11,14 +11,12 @@ import Home from "./pages/Home";
 import MenuBar from "./MenuBar";
 import Dashboard from "./pages/Dashboard";
 
-import EmailSent from "./pages/EmailSent";
 import PrivateRoute from "./PrivateRoute";
 import Internship from "./pages/Internship";
 import Footer from "./Footer";
 import { listCompanies } from "./actions/companyActions";
 import { useDispatch } from "react-redux";
 import LandingPage from "./pages/LandingPage";
-import Homepage from "./pages/Homepage";
 
 
 function App() {

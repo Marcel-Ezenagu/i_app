@@ -82,7 +82,7 @@ function Login(props) {
                     
                     <div className='bottom' >
                                 <br/>
-                        <p>New to Internapp ? <Link to= '/signup' style={{color: "rgb(3, 105, 17)"}}>Create an Account</Link></p> 
+                        <p>New to Internapp ? <Link to= '/signup' style={{color: "rgb(3, 105, 17)"}}>Create Account</Link></p> 
                    
                     </div>
 

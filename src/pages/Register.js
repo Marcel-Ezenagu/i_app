@@ -20,30 +20,46 @@ function Register(props) {
     const [ploading, setPloading] = useState(false);
     const [perror, setPerror] = useState(false);
 
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastName] = useState('')
-    const [email, setEmail] = useState('')
-    const [userName, setUserName] = useState('')
-    const [phone, setPhone] = useState('')
-    const [gender, setGender] = useState('Male')
-    const [password, setPassword] = useState('')
-    const [profileImage, setProfileImage] = useState()
-    const [scope, setScope] = useState('Basic')
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+    const [userName, setUserName] = useState('');
+    const [phone, setPhone] = useState('');
+    const [gender, setGender] = useState('Male');
+    const [password, setPassword] = useState('');
+    const [profileImage, setProfileImage] = useState("");
+    const [scope, setScope] = useState('Basic');
 
 
     const dispatch = useDispatch();
+    
+   
+    
+    
     
 
     const Submit = async (e) => {
         e.preventDefault();
 
-        const sents = await instance.post("/user/signup", { firstName, lastName ,email ,userName ,phone, gender ,password, profileImage, scope });         
-        console.log("here's sent",sents);
-        setPloading(true);
-        if (sents) {
-            
-        props.history.push('/emailsent')
-        }
+
+        const formData = new FormData();
+        formData.append("firstName", firstName);
+        formData.append("lastName", lastName);
+        formData.append("email", email);
+        formData.append("userName", userName);
+        formData.append("phone", phone);
+        formData.append("gender", gender);
+        formData.append("password", password);
+        formData.append("profileImage", profileImage);
+        formData.append("scope", scope);
+        
+        
+        
+
+        const newUser = await instance.post("/user/signup", formData).then(res => console.log(res)).catch(err => console.log(err));         
+        
+        
+
 
     };
 
@@ -54,7 +70,7 @@ function Register(props) {
             <Note />
             <br />
             <div>
-                <form>
+                <form onSubmit={Submit} encType="multipart/form-data">
                 <div className='form-field'>
                     <label>First Name</label>
                     <input name='First Name' type='text' placeholder='Enter your First Name' value={firstName}  onChange={e => setFirstName(e.target.value)}  required />
@@ -82,7 +98,7 @@ function Register(props) {
                     
                 <div className='form-field'>
                     <label>Phone</label>
-                    <input name='Phone' type='Phone' placeholder='Enter your Phone' value={phone}  onChange={e => setPhone(e.target.value)}  required />
+                    <input name='Phone' type='tel' placeholder='Enter your Phone' value={phone}  onChange={e => setPhone(e.target.value)}  required />
 
                 </div>
                     
@@ -102,8 +118,14 @@ function Register(props) {
                     </div>
                     
                 <div className='form-field'>
-                    <label>Profile Image</label>
-                    <input name='Profile Image' type='file' placeholder='choose a Profile Image' value={profileImage}  onChange={e => setProfileImage(e.target.files[0])}  />
+                    <label htmlFor="profileImage">Choose profile Image</label>
+                        <input
+                            id="profileImage"
+                            name="profileImage"
+                            type='file'
+                            placeholder='choose a Profile Image'
+                            
+                            onChange={e => setProfileImage(e.target.files[0])} />
 
                     </div>
                     
@@ -117,7 +139,6 @@ function Register(props) {
                 
                 <button
                     type='submit'
-                    label='Send Message'
                     
                     className='signup-button'
                     >Sign Up</button>              

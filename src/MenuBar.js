@@ -108,8 +108,9 @@ function MenuBar(props) {
             <Nav.Link href="#about">About Us</Nav.Link>
             <Nav.Link href="/internships">Internships</Nav.Link>
             <Nav.Link href="#services">Our Services</Nav.Link>
-                
-            <Nav.Link href="/login">Login</Nav.Link>
+            <Nav.Link href="#team">Our Team</Nav.Link>
+              
+            <Nav.Link as={Link} to="/login">Login</Nav.Link>
           </>
           )
           

@@ -16,10 +16,24 @@ const data = {
             image: './images/moz.jpg'
         },
         {
-            _id: "4",
+            _id: 3,
             name: "itumagnet",
             image: "./images/itu.jpg"
+        },
+        {
+            _id: 4,
+            name: "bizSkills Academy",
+            image: "./images/bizskills.jpg"
+        },
+        {
+            _id: 5,
+            name: "Work and connect",
+            image: "./images/workandconnect.jpg"
         }
+    ],
+    team: [ {
+        image: "./images/eben.jpg"
+    },
     ]
 };
 

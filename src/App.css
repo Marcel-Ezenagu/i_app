@@ -46,13 +46,18 @@ margin-left: -1em;
 /* Login */
 
 .login{
-  margin-top: 10rem;
-  margin-bottom: 3rem;
-  
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 9rem;
+  width: 100%;
+  height: 100vh;
 }
 .login-button{
-  width: 30vw;
-  margin-left: 35%;
+  text-align: match-pattern;
+  width: "fit-content";
+  margin-right: 40%;
+
+  margin-left: 40%;
   
   border: 0.2rem solid  rgb(230, 53, 4);
   background: rgb(230, 53, 4);
@@ -72,8 +77,11 @@ margin-left: -1em;
 /* signUp */
 
 .register{
-  margin-top: 1rem;
-  margin-bottom: 7rem;
+  padding-top: 5.5rem;
+  padding-bottom: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 .form-field{
